@@ -27,7 +27,13 @@ const server = express();
 const path = require("path");
 server.use(express.json());
 const cors = require("cors");
-server.use(cors());
+server.use(
+  cors({
+    origin: "https://s13g3-project.pages.dev",
+    credentials: true,
+  }),
+);
+
 require("dotenv").config();
 
 // 6.2-import
